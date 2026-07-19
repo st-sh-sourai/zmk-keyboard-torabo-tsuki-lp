@@ -1,34 +1,14 @@
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-/*
-元の設定は以下
+
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-};
-*/
-/*
-デバッグのため一時的にコメントアウト（AML + レイヤー条件付きスクロール版）
-&pointing_listener {
-    input-processors = 
-        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-        &zip_temp_layer 5 3000
-    >;
+
     scroll_on_l6 {
         layers = <6>;
-        input-processors = 
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-            &zip_xy_to_scroll_mapper
-        >;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_xy_to_scroll_mapper>;
     };
-};
-&zip_temp_layer {
-    excluded-positions = <16 17 18 28 30>;
-};
-*/
-// デバッグ用: レイヤーに関係なく常にスクロール化するテスト
-&pointing_listener {
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_xy_to_scroll_mapper>;
 };
 
 &size_s_transform {
