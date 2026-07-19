@@ -7,10 +7,26 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_clear {
+        mul_mark {
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
             layers = <2>;
+        };
+    };
+
+    macros {
+        mul_mark: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_NUMBER_1 &kp KP_NUMBER_5>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "NEW_MACRO";
         };
     };
 
