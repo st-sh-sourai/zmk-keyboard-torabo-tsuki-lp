@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 /*
-元の設定
+元の設定は以下
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
