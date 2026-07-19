@@ -7,7 +7,6 @@
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 */
-
 /*
 デバッグのため一時的にコメントアウト（AML + レイヤー条件付きスクロール版）
 &pointing_listener {
@@ -27,7 +26,6 @@
     excluded-positions = <16 17 18 28 30>;
 };
 */
-
 // デバッグ用: レイヤーに関係なく常にスクロール化するテスト
 &pointing_listener {
     input-processors = 
@@ -35,7 +33,6 @@
         &zip_xy_to_scroll_mapper
     >;
 };
-
 &size_s_transform {
     col-offset = <7>;
 };
